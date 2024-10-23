@@ -9,7 +9,9 @@ class TasksController extends Controller
 {
     public function index(){
 
-        $tasks = Task::orderBy('id','DESC')->get();
+        $tasks = Task::orderBy('completed_at')
+        ->orderBy('id','DESC')
+        ->get();
 
     
         return view('tasks.index', 
@@ -25,7 +27,7 @@ class TasksController extends Controller
 
     public function store()
     {
-        $task = Task::create([
+        Task::create([
             'description'=> request('description'),
         ]);
 
@@ -42,4 +44,15 @@ class TasksController extends Controller
           */
         return redirect ('/');
     }
+
+    public function update($id)
+    {
+        $task = Task::where('id',$id)->first();
+
+        $task->completed_at=now();
+        $task->save();
+
+        return redirect('/');
+    }
+
 }

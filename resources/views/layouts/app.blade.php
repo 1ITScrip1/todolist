@@ -24,7 +24,7 @@
     </div>
   </div>
 </nav>
-        <div class="py-2 container">
+        <div class=" container">
         @yield('content')
         </div>
     </body>
