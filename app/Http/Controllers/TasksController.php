@@ -30,7 +30,7 @@ class TasksController extends Controller
         ]);
 
 
-
+//varianta 2
      /*   $this->validate($request,[
             'description'=>'required',
             
