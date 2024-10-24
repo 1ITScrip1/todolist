@@ -4,6 +4,19 @@
 @section('content')
 
         <h1>Task nou</h1>
+    @if($errors->any())
+        <ul>
+        <div class="alert alert-danger" role="alert">
+            @foreach($errors->all() as $error)
+            
+                <li> {{$error}} </li>           
+                
+            @endforeach
+            </div>
+        </ul>
+    @endif
+
+
         <form method="POST" action="/tasks">
             <div class="form-group">
                 @csrf
