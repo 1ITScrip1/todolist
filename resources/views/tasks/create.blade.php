@@ -20,10 +20,12 @@
         <form method="POST" action="/tasks">
             <div class="form-group">
                 @csrf
-                <label for="description">Descrierea task-ului </label>
-                <input class="form-comtrol" name="description" />
-
+                <div>
+                {{ Form::text('description', '', ['class' => 'form-control', 'placeholderd' => 'Adauga un continut task-ului']) }}
+                </div>
             </div>
+            
+
             <div class="form-group">
 
                  <button type="submit"class ="btn btn-primary">Creeaza un task nou </button>
