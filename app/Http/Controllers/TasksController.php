@@ -31,17 +31,6 @@ class TasksController extends Controller
             'description'=> request('description'),
         ]);
 
-
-//varianta 2
-     /*   $this->validate($request,[
-            'description'=>'required',
-            
-          ]);
-
-          $task = new task;
-          $task->description=$request->input('description');
-          $task->save();
-          */
         return redirect ('/');
     }
 
@@ -54,5 +43,16 @@ class TasksController extends Controller
 
         return redirect('/');
     }
+
+    public function delete($id){
+
+        $task = Task::where('id', $id)->first();
+        $task->delete();
+
+
+        return redirect ('/');
+
+    }
+
 
 }
