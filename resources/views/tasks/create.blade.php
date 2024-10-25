@@ -3,14 +3,14 @@
 
 @section('content')
 
-        <h1>Task nou</h1>
+        <h1>Creeaza un task nou</h1>
     @if($errors->any())
         <ul>
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-warning" role="alert">
             @foreach($errors->all() as $error)
-            
-                <li> {{$error}} </li>           
-                
+
+                <li> {{$error}} </li>
+
             @endforeach
             </div>
         </ul>
@@ -21,15 +21,17 @@
             <div class="form-group">
                 @csrf
                 <div>
-                {{ Form::text('description', '', ['class' => 'form-control', 'placeholderd' => 'Adauga un continut task-ului']) }}
+                {{ Form::text('description', '', ['class' => 'form-control', 'placeholder' => 'Adauga un continut task-ului']) }}
                 </div>
             </div>
-            
+
 
             <div class="form-group">
-
+            <div class="row mt-3">
+            <div class="d-grid gap-2 col-6 mx-auto">
                  <button type="submit"class ="btn btn-primary">Creeaza un task nou </button>
-
+            </div>
+            </div>
             </div>
         </form>
 
