@@ -1,8 +1,9 @@
 
 <html>
-
+    <body class="p-3 mb-2 bg-dark-subtle text-dark-emphasis">
     <head>
- 
+
+        <div class="dropdown" data-bs-theme="dark">
 
         <title> Aplicatie pentru organizarea task-urilor</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
@@ -31,5 +32,6 @@
         @yield('content')
         </div>
     </body>
-
+</div>
+</body>
 </html>
